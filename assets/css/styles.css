@@ -34,6 +34,7 @@ p{
         ". . . . . h h . . . . ."
         "hr hr hr hr hr hr hr hr hr hr hr hr"
         ". . m m m m m m m m . ."
+        ". . i i i i i i i i . ."
         ". . . f f f f f f . . ."
     ;
     
@@ -41,13 +42,33 @@ p{
 
 .header{
     grid-area: h;
-    
+    margin: 15px;
+}
+
+.header img{
+    height: 60px;
+    width: auto;
 }
 
 img {
   width: 100%;
   height: auto;
 
+}
+
+.info{
+    grid-area: i;
+    display: grid;
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-columns: 1fr 1fr; 
+}
+
+.contact{
+    
+}
+
+.donat{
+    
 }
 
 .hero{
@@ -80,7 +101,8 @@ img {
 }
 
 .main > div{
-    padding: 1em;
+    border-style: solid;
+    
 }
 
 .footer{
