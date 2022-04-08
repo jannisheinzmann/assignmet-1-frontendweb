@@ -63,12 +63,22 @@ img {
     grid-template-columns: 1fr 1fr; 
 }
 
+input[type=text]{
+    margin: 10px;
+    width: auto;
+    height: 15px;
+}
+
 .contact{
-    
+    border: 2px solid black;
+    margin: 1em;
+    padding: 1em;
 }
 
 .donat{
-    
+    border: 2px solid black;
+    margin: 1em;
+    padding: 1em;
 }
 
 .hero{
@@ -101,8 +111,7 @@ img {
 }
 
 .main > div{
-    border-style: solid;
-    
+    padding: 1em;
 }
 
 .footer{
@@ -116,6 +125,7 @@ img {
         ". . h h h h h h h h . . "
         "hr hr hr hr hr hr hr hr hr hr hr hr"
         "m m m m m m m m m m m m "
+        "i i i i i i i i i i i i"
         ". . . f f f f f f . . ."
         ;
     }
@@ -134,7 +144,12 @@ img {
         ". . h h h h h h h h . . "
         "hr hr hr hr hr hr hr hr hr hr hr hr"
         "m m m m m m m m m m m m "
+        "i i i i i i i i i i i i"
         "f f f f f f f f f f f f"
         ;
     }
+    .info{
+        grid-template-columns: 1fr;
+    }
+    
 }
