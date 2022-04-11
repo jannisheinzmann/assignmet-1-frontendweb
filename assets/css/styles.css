@@ -34,10 +34,39 @@ p{
         ". . . . . h h . . . . ."
         "hr hr hr hr hr hr hr hr hr hr hr hr"
         ". . m m m m m m m m . ."
+        "hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2"
         ". . i i i i i i i i . ."
+        ". . a a a a a a a a . ."
         ". . . f f f f f f . . ."
-    ;
+    ;   
+}
+
+.wrapper2{
+    display: grid;
+    grid-template-columns: repeat (12, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: 5em;
     
+    grid-template-areas: 
+        ". . . . . mh mh . . . . . "
+        "mp mp mp mp mp mp mp mp mp mp mp mp"
+    ;   
+}
+
+.mainMap{
+    margin: 15px;
+    grid-area: mp;
+}
+
+.mapHeader{
+    grid-area: mh;
+    position: sticky;
+    top: -15px;
+}
+
+.About{
+    grid-area: a;
+    margin: 15px;
 }
 
 .header{
@@ -46,8 +75,8 @@ p{
 }
 
 .header img{
-    height: 60px;
-    width: auto;
+    height: auto;
+    width: 100%;
 }
 
 img {
@@ -83,6 +112,11 @@ input[type=text]{
 
 .hero{
     grid-area: hr;
+    position: relative;
+}
+
+.hero2{
+    grid-area: hr2;
     position: relative;
 }
 
@@ -141,7 +175,7 @@ input[type=text]{
     }
     .wrapper{
         grid-template-areas: 
-        ". . h h h h h h h h . . "
+        "h h h h h h h h h h h h "
         "hr hr hr hr hr hr hr hr hr hr hr hr"
         "m m m m m m m m m m m m "
         "i i i i i i i i i i i i"
