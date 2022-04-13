@@ -11,6 +11,11 @@ h1{
     text-align: center;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 h2{
     font-size: 1.8em;
 }
@@ -27,63 +32,133 @@ p{
 .wrapper{
     display: grid;
     grid-template-columns: repeat (12, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    grid-column-gap: 5em;
-    
     grid-template-areas: 
-        ". . . . . h h . . . . ."
+        "h h h h h h h h h h h h"
         "hr hr hr hr hr hr hr hr hr hr hr hr"
         ". . m m m m m m m m . ."
-        "hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+        ". hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 ."
         ". . i i i i i i i i . ."
         ". . a a a a a a a a . ."
-        ". . . f f f f f f . . ."
+        "f f f f f f f f f f f f"
     ;   
 }
 
 .wrapper2{
     display: grid;
     grid-template-columns: repeat (12, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    grid-column-gap: 5em;
-    
     grid-template-areas: 
-        ". . . . . mh mh . . . . . "
+        "mh mh mh mh mh mh mh mh mh mh mh mh"
+        ". . . . . d d . . . . ."
         "mp mp mp mp mp mp mp mp mp mp mp mp"
     ;   
 }
 
 .mainMap{
-    margin: 15px;
     grid-area: mp;
+}
+
+
+.header{
+    grid-area: h;
+    padding: 1.5em .5em;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.header img{
+    width: 50%;
+}
+
+.back{
+    width:42px;
+    height:42px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+    margin-right: 30px;
 }
 
 .mapHeader{
     grid-area: mh;
     position: sticky;
-    top: -15px;
+    padding: 1.5em .5em;
+    background-color: black;
+    display: flex;
+    justify-content: center;
 }
 
-.About{
-    grid-area: a;
-    margin: 15px;
+
+
+.mapHeader img{
+    width: 50%;
 }
 
-.header{
-    grid-area: h;
-    margin: 15px;
+
+
+.about{
+    padding: 30px;
 }
 
-.header img{
-    height: auto;
-    width: 100%;
+.back{
+    height: 60px;
 }
 
-img {
-  width: 100%;
-  height: auto;
 
+
+
+/* this is all the drop down css */
+.dropdown{
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    grid-area: d;
+    margin-left: 30px;
+    border: none;
 }
+
+.yearbut{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.years {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.years a {
+    color: white;
+    background-color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.years a:hover {
+    background-color: white;
+    color: black;
+}
+
+.dropdown:hover .years {
+    display: block;
+}
+
+.dropdown:hover .yearbut {
+    background-color: white;
+    color: black;
+}
+
+
+
+/* end of drop down css */
 
 .info{
     grid-area: i;
@@ -116,9 +191,12 @@ input[type=text]{
 }
 
 .hero2{
+    display: grid;
     grid-area: hr2;
-    position: relative;
+    grid-template-columns: 1fr 1fr;
 }
+
+/* this is the css for the button on the home page to the map */
 
 .hero .btn{
     position: absolute;
@@ -129,11 +207,15 @@ input[type=text]{
     width: 120px;
     height: 60px;
     border-radius: 30px;
-    background-color: aqua;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 60px;
 }
 
 .hero .btn:hover{
-    background-color: aquamarine;
+    background-color: white;
+    color: black;
 }
 
 
@@ -150,40 +232,54 @@ input[type=text]{
 
 .footer{
     grid-area: f;
+    background-color: black;
+    color: white;
+    padding: 1.5em .5em;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.footer p{
+    width: 70%;
 }
 
 @media (max-width: 1024px) {
-    
-    .wrapper{
-        grid-template-areas: 
-        ". . h h h h h h h h . . "
-        "hr hr hr hr hr hr hr hr hr hr hr hr"
-        "m m m m m m m m m m m m "
-        "i i i i i i i i i i i i"
-        ". . . f f f f f f . . ."
-        ;
-    }
-    
-    .main{
-        grid-template-columns: 1fr 1fr;
-    }
+
 }
 
 @media (max-width: 750px) {
-    .main{
+    .hero2{
+        grid-template-columns:1fr;
+    }
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer p{
+        width: 80%;
+    }
+}
+
+@media (max-width: 425px) {
+ 
+    .main {
         grid-template-columns: 1fr;
     }
-    .wrapper{
-        grid-template-areas: 
-        "h h h h h h h h h h h h "
-        "hr hr hr hr hr hr hr hr hr hr hr hr"
-        "m m m m m m m m m m m m "
-        "i i i i i i i i i i i i"
-        "f f f f f f f f f f f f"
-        ;
-    }
+    
     .info{
         grid-template-columns: 1fr;
     }
     
+    .header img{
+        width: 80%;
+    }
+
+    .mapHeader img{
+        width: 80%;
+    }
+    
+    .footer p{
+        width: 80%;
+    }
+
 }
