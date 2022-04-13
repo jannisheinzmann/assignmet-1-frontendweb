@@ -1,14 +1,18 @@
 /* rm relitive to div size rem relitive to the whole brouser */
 
+
+
 body{
     font-size: 16px;
     font-family: sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 h1{
     color: blue;
     font-size: 2em;
     text-align: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 img {
